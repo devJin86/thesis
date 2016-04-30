@@ -18,7 +18,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'client/*.html' ,'test/**/*Spec.js'
+      'client/*.html',
+      'test/**/*Spec.js',
     ],
 
 
@@ -66,7 +67,7 @@ module.exports = function(config) {
         flags: ['--no-sandbox']
       }
     },
- 
+
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
