@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import { io } from 'socket.io-client/socket.io';
+// import { socket } from 'socket.io';
 /* React-tab-event-plugin */
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -11,6 +11,8 @@ import HeaderNavBar from './Components/HeaderNavBar.jsx';
 import DataViewList from './Components/DataViewList.jsx';
 import Chatroom from './Components/Chatroom.jsx';
 import D3View from './Components/D3View.jsx';
+
+const socket = io();
 
 class App extends React.Component {
   constructor(props) {

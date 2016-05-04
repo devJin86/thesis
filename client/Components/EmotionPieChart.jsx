@@ -10,9 +10,7 @@ export default class EmotionPieChart extends React.Component {
   }
 
   render() {
-    if (!this.props.data.anger) {
-      return <div></div>;
-    }
+
     const pieData = [
       { label: 'anger', value: Math.floor(this.props.data.anger * 100) },
       { label: 'disgust', value: Math.floor(this.props.data.disgust * 100) },

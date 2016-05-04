@@ -13,7 +13,7 @@ module.exports = {
         test: /\.jsx?$/,
         // regular expression for .jsx or .js
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           presets: ['react', 'es2015'],
         },
