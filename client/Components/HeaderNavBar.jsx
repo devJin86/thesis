@@ -13,27 +13,40 @@ export default class HeaderNavBar extends React.Component {
   constructor(props) {
     super(props);
   }
-  // _handleLoginClick () {
-  //   e.preventDefault();
-  //
-  // }
+  _handleLoginClick (e) {
+    e.preventDefault();
+    console.log('clicked');
+
+  }
   render() {
     const style = {
       margin: 12,
     };
+
     return (
       <AppBar
     title="Title"
 
     iconElementLeft={
-      <IconButton>
-        <Avatar
-          src='https://lh5.ggpht.com/0WtsR4_NKcbftR5KvnlQ9YYpkBsfglEKhsvBbe-PSOgWkuDWIw2DIUnkmbuWy7DYFQ=w300-rw'
-          backgroundColor='Color.1A237E'
-          />
-      </IconButton>
+      <div>
+        <IconButton>
+          <Avatar
+            src='https://lh5.ggpht.com/0WtsR4_NKcbftR5KvnlQ9YYpkBsfglEKhsvBbe-PSOgWkuDWIw2DIUnkmbuWy7DYFQ=w300-rw'
+            backgroundColor='Color.1A237E' />
+        </IconButton>
+        <form action='/login'>
+          Login <input type='text' ref='username' placeholder='User Name' />
+        Password <input type='password' ref='username' placeholder='*@&$(%(#&@))' />
+          <button type='submit'>Login</button>
+        </form>
+        <form action='/login'>
+          UserName<input type='text' ref='username' placeholder='User Name' />
+          Password<input type='password' ref='username' placeholder='*@&$(%(#&@))' />
+          UserName<input type='text' ref='telphoneNumber' placeholder='555-555-5555' />
+          <button type='submit'>Login</button>
+        </form>
+      </div>
     }
-
     iconElementRight={
       <div>
         <a href="https://slack.com/oauth/authorize?scope=incoming-webhook&client_id=11495581584.40629389573">
@@ -42,7 +55,7 @@ export default class HeaderNavBar extends React.Component {
             srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" />
         </a>
         <RaisedButton label="Signup" primary={true} style={style} />
-        <RaisedButton label="Login" href="oauth/authorize/callback" primary={true} style={style} />
+        <RaisedButton label="Login" onClick={this._handleLoginClick} primary={true} style={style} />
         <RaisedButton label="Logout" primary={true} style={style} />
       </div>
     }
@@ -50,21 +63,37 @@ export default class HeaderNavBar extends React.Component {
     )
   }
 }
-{/*<form onSubmit={(e) => e.preventDefault()}>
-  <TextField
-    hintText="Username"
-    value={this.state.username}
-    onChange={this.onUsernameChange}
-  ><br />
-  <TextField
-    hintText="Password"
-    type="password"
-    value={this.state.password}
-    onChange={this.onPasswordChange}
-  ><br />
-  <RaisedButton
-    type="submit"
-    label="Sign Up"
-    onClick={this.onSignupSubmit}
-  >
-</form>*/}
+//
+// class LoginForm extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       username: '',
+//       password: ''
+//     }
+//   }
+//   render() {
+//     return (
+//
+//     )
+//   }
+// }
+// {<form onSubmit={(e) => e.preventDefault()}>
+//   <TextField
+//     hintText="Username"
+//     value={this.state.username}
+//     onChange={this.onUsernameChange}
+//   ><br />
+//   <TextField
+//     hintText="Password"
+//     type="password"
+//     value={this.state.password}
+//     onChange={this.onPasswordChange}
+//   ><br />
+//   <RaisedButton
+//     type="submit"
+//     label="Sign Up"
+//     onClick={this.onSignupSubmit}
+//   >
+// </form>
+// }
