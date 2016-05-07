@@ -16,6 +16,8 @@ export default class HeaderNavBar extends React.Component {
   _handleLoginClick (e) {
     e.preventDefault();
     console.log('clicked');
+    let username = this.refs.username;
+    let password = this.refs.password;
 
   }
   render() {
@@ -34,15 +36,9 @@ export default class HeaderNavBar extends React.Component {
             src='https://lh5.ggpht.com/0WtsR4_NKcbftR5KvnlQ9YYpkBsfglEKhsvBbe-PSOgWkuDWIw2DIUnkmbuWy7DYFQ=w300-rw'
             backgroundColor='Color.1A237E' />
         </IconButton>
-        <form action='/login'>
+        <form action='https://slack.com/oauth/authorize'>
           Login <input type='text' ref='username' placeholder='User Name' />
-        Password <input type='password' ref='username' placeholder='*@&$(%(#&@))' />
-          <button type='submit'>Login</button>
-        </form>
-        <form action='/login'>
-          UserName<input type='text' ref='username' placeholder='User Name' />
-          Password<input type='password' ref='username' placeholder='*@&$(%(#&@))' />
-          UserName<input type='text' ref='telphoneNumber' placeholder='555-555-5555' />
+          Password <input type='password' ref='password' placeholder='this is your password' />
           <button type='submit'>Login</button>
         </form>
       </div>
