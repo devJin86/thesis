@@ -19,6 +19,7 @@ const D3View = ({ view, data, methods }) => {
           case 'pie': return <EmotionPieChart data={data.emotions} getEmotions={methods.getEmotions} />;
           case 'bar': return <EmotionBarChart data={data.emotions} getEmotions={methods.getEmotions} />;
           case 'bubble': return <BubbleChart data={data.emotions} getEmotions={methods.getEmotions} />;
+          case 'wordCloud': return <BubbleChart />;
           case 'tax': return <Taxonomy />;
           default: return <EmotionPieChart data={data.emotions} getEmotions={methods.getEmotions} />;
         }
