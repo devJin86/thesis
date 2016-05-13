@@ -1,5 +1,3 @@
-/*use 'esversion:6'*/
-
 import d3 from 'd3';
 import _ from 'lodash';
 
@@ -8,6 +6,7 @@ const margin = 60;
 // data looks like this
 // { emotion: emotion, data: object[emotion], index: i }
 barChart.create = (el, props, data) => {
+  console.log(el, 'svg inside create');
   // functions to grab specific parts of the data
   const emotion = d => d.emotion;
   // const yAxisMargin = {'margin-top': '25%'};
@@ -77,6 +76,7 @@ barChart.update = (el, props, data) => {
   const yAxis = d3.svg.axis().scale(yScale).orient('left');
 
   const svg = d3.select('#barChart');
+  console.log(data);
   svg.selectAll('rect')
     .data(data)
     .transition()
@@ -87,6 +87,7 @@ barChart.update = (el, props, data) => {
     .attr('width', xScale.rangeBand());
     // .attr('text-anchor', 'middle')
     // .attr('fill', 'green')
+
 };
 
 export default barChart;
