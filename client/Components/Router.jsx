@@ -1,6 +1,6 @@
 // export the router to be rendered at entry.jsx
 import React from 'react';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, hashHistory } from 'react-router';
 // TODO: implement redirects
 import AnalyticsSockets from './Analytics.Sockets.jsx';
 
@@ -9,7 +9,7 @@ import About from './About.jsx';
 import Home from './Home.jsx';
 
 const RouterComponent = () => (
-  <Router history={browserHistory}>
+  <Router >
     <Route path="/" component={Home} />
     <Route path="/admin" component={Admin} />
     <Route path="/analytics" component={AnalyticsSockets} />
