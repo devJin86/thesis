@@ -5,9 +5,9 @@ module.exports = {
   saveUser: (req, res) => {
     var params = req.query.id;
     console.log('params', params);
-    
+
     userModel.saveUser(params, function(err, results) {
-      if (!err) { 
+      if (!err) {
         res.json(results);
       } else {
         res.json(err);
